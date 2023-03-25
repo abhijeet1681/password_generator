@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="icon" href="assets/lock.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .outer {
+            display: inline-block;
+            border: 2px dashed gray;
+            border-radius: 50%;
+            padding: 6rem;
+            animation: outerCircle 60s linear infinite;
+        }
+
+        @keyframes outerCircle {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            animation: logoAnimate 60s linear infinite;
+        }
+
+        @keyframes logoAnimate {
+            0% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        #amazon {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+        }
+
+        #apple{
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            width: 75px;
+        }
+
+        #meta {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: 60%;
+            right: -3%;
+        }
+
+        #google {
+            position: absolute;
+            bottom: 60%;
+            left: -3%;
+        }
+
+        #netflix{
+            position: absolute;
+            top: -4%;
+            right: 55%;
+        }
+
+        #linkedin {
+            position: absolute;
+            top: -4%;
+            right: 65%;
+        }
+
+        #microsoft {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: -4%;
+            left: 55%;
+        }
+
+        #flipkart {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: -7%;
+            right: -10%;
+        }
+
+        #ola {
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            bottom: -4%;
+            left: 10%;
+        }
+
+        #myntra {
+            position: absolute;
+            top: 60%;
+            right: -10%;
+        }
+
+        .middle {
+            border: 0px;
+            border-radius: 50%;
+            background-color: rgb(135, 124, 207);
+            padding: 3rem;
+        }
+
+        .inner {
+            display: inline-block;
+            border: 1px solid rgb(90, 89, 89);
+            border-radius: 50%;
+            padding: 5.2rem;
+            position: relative;
+            background-color: white;
+        }
+
+        #pswd {
+            position: absolute;
+            top: 50%;
+            left: 62%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- password container -->
+        <div id="container">
+            <h1>PASSWORD GENERATOR</h1>
+
+            <div class="display-container">
+                <input readonly placeholder="Password" class="display" data-passwordDisplay>    
+                <!-- data-passwordDisplay is a custom attribute here -->
+
+                <button data-copy class="copyBtn">
+                    <span class="tooltip" data-copyMsg>copied</span>
+                    <img src="./assets/icons8-copy-64.png" alt="copy" width="20" height="20">
+                </button>
+            </div>
+
+            <div class="input-container">
+                <!-- password-length -->
+                <div class="length-container">
+                    <p>Password Length</p>
+                    <p data-lengthNumber>0</p>
+                </div>
+
+                <!-- slider-->
+                <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
+
+                <!-- checkboxes -->
+                <div class="check">
+                    <input type="checkbox" id="uppercase">
+                    <label for="uppercase">Includes uppercase letters</label>
+                </div>
+
+                <div class="check">
+                    <input type="checkbox" id="lowercase">
+                    <label for="lowercase">Includes lowercase letters</label>
+                </div>
+
+                <div class="check">
+                    <input type="checkbox" id="numbers">
+                    <label for="numbers">Includes numbers</label>
+                </div>
+
+                <div class="check">
+                    <input type="checkbox" id="symbols">
+                    <label for="symbols">Includes symbols</label>
+                </div>
+
+                <!-- strength section -->
+                <div class="strength-container">
+                    <p>Strength</p>
+                    <div data-indicator class="indicator"></div>
+                </div>
+
+                <!-- generate-password -->
+                <button class="generateBtn">Generate Password</button>
+            </div>
+        </div>
+
+        <!-- circular animation -->
+        <div id="circleWrapper">
+            <div class="outer">
+                <img src="./assets/amazon.png" class="logo" id="amazon">
+                <img src="./assets/apple.png" class="logo" id="apple">
+                <img src="./assets/google.png" class="logo" id="google">
+                <img src="./assets/netflix.png" class="logo" id="netflix">
+                <img src="./assets/microsoft.png" class="logo" id="microsoft">
+                <img src="./assets/meta.png" class="logo" id="meta">
+    
+                <div class="middle">
+                    <div class="inner">
+                        <img src="./assets/ola.png" class="logo" id="ola">
+                        <img src="./assets/linkedin.png" class="logo" id="linkedin">
+                        <img src="./assets/flipkart.png" class="logo" id="flipkart">
+                        <img src="./assets/myntra.png" class="logo" id="myntra">
+                    </div>
+                </div>
+                
+            </div>
+    
+            <img src="./assets/images.png" width="70px" height="70px" id="pswd">
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
