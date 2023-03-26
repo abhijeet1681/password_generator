@@ -30,7 +30,7 @@ To run **Portfolio** locally, run this command on your git bash:
 Windows:
 
 ```bash
-git clone https://github.com/abhijeet1681/tourism.git
+git clone https://github.com/abhijeet1681/password_generator.git
 ```
 
 ### Contact
